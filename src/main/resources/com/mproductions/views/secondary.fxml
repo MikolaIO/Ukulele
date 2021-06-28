@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<View fx:id="secondary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="350.0" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: white;" stylesheets="@secondary.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mproductions.views.FreestylePresenter">
+   <center>
+      <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="btnG" mnemonicParsing="false" onAction="#HandleBtnG" prefHeight="100.0" prefWidth="69.0" style="-fx-background-color: lightblue;" text="G" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <Button fx:id="btnC" mnemonicParsing="false" onAction="#HandleBtnC" prefHeight="100.0" prefWidth="70.0" style="-fx-background-color: lightblue;" text="C" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <Button fx:id="btnE" mnemonicParsing="false" onAction="#HandleBtnE" prefHeight="100.0" prefWidth="77.0" style="-fx-background-color: lightblue;" text="E" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <Button fx:id="btnA" mnemonicParsing="false" onAction="#HandleBtnA" prefHeight="100.0" prefWidth="77.0" style="-fx-background-color: lightblue;" text="A" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <Button fx:id="btnF" mnemonicParsing="false" onAction="#HandleBtnF" prefHeight="100.0" prefWidth="78.0" style="-fx-background-color: lightblue;" text="F" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <Button fx:id="btnGm" mnemonicParsing="false" onAction="#HandleBtnGm" prefHeight="100.0" prefWidth="77.0" style="-fx-background-color: turquoise;" text="Gm" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+            <Button fx:id="btnCm" mnemonicParsing="false" onAction="#HandleBtnCm" prefHeight="100.0" prefWidth="78.0" style="-fx-background-color: turquoise;" text="Cm" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+            <Button fx:id="btnEm" mnemonicParsing="false" onAction="#HandleBtnEm" prefHeight="100.0" prefWidth="77.0" style="-fx-background-color: turquoise;" text="Em" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+            <Button fx:id="btnAm" mnemonicParsing="false" onAction="#HandleBtnAm" prefHeight="100.0" prefWidth="77.0" style="-fx-background-color: turquoise;" text="Am" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+            <Button fx:id="btnFm" mnemonicParsing="false" onAction="#HandleBtnFm" prefHeight="100.0" prefWidth="77.0" style="-fx-background-color: turquoise;" text="Fm" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+            <ImageView fx:id="imgG" fitHeight="148.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" GridPane.valignment="BOTTOM">
+               <image>
+                  <Image url="@image/G.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgC" fitHeight="150.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
+               <image>
+                  <Image url="@image/C.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgE" fitHeight="147.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.valignment="BOTTOM">
+               <image>
+                  <Image url="@image/E.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgA" fitHeight="141.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.valignment="BOTTOM">
+               <image>
+                  <Image url="@image/A.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgF" fitHeight="150.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.valignment="BOTTOM">
+               <image>
+                  <Image url="@image/F.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgGm" fitHeight="149.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <image>
+                  <Image url="@image/Gm.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCm" fitHeight="148.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <image>
+                  <Image url="@image/Cm.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgEm" fitHeight="142.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <image>
+                  <Image url="@image/Em.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgAm" fitHeight="149.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <image>
+                  <Image url="@image/Am.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgFm" fitHeight="148.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <image>
+                  <Image url="@image/Fm.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+   </center>
+</View>
