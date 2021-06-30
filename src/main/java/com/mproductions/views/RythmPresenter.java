@@ -29,9 +29,9 @@ public class RythmPresenter extends RythmLogic {
         });
 
         InitRythm();
-        gridpane.add(getTimers().get(0).timerfield, 0,4);
-        gridpane.add(getTimers().get(1).timerfield, 1,4);
-        gridpane.add(getTimers().get(2).timerfield, 2,4);
-        gridpane.add(getTimers().get(3).timerfield, 3,4);
+        gridpane.add(getTimers().get(FIRST_TIMER).timerfield, FIRST_TIMER,TIMER_ROW);
+        gridpane.add(getTimers().get(SECOND_TIMER).timerfield, SECOND_TIMER,TIMER_ROW);
+        gridpane.add(getTimers().get(THIRD_TIMER).timerfield, THIRD_TIMER,TIMER_ROW);
+        gridpane.add(getTimers().get(FOURTH_TIMER).timerfield, FOURTH_TIMER,TIMER_ROW);
     }
 }

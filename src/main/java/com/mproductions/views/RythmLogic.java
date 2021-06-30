@@ -13,8 +13,16 @@ import java.util.ArrayList;
 
 public class RythmLogic {
 
+    public static final int FIRST_TIMER = 0;
+    public static final int SECOND_TIMER = 1;
+    public static final int THIRD_TIMER = 2;
+    public static final int FOURTH_TIMER = 3;
+    public static final int TIMER_ROW = 4;
+
     @FXML
     private Button btnStart;
+    @FXML
+    private Button btnStop;
     @FXML
     private Button btnC1;
     @FXML
@@ -49,10 +57,10 @@ public class RythmLogic {
     private Button btnF4;
 
     private ArrayList<Timer> timers;
-    private String pathC = "file:src/main/resources/com/mproductions/views/sound/C.mp3";
-    private String pathG = "file:src/main/resources/com/mproductions/views/sound/G.mp3";
-    private String pathAm = "file:src/main/resources/com/mproductions/views/sound/Am.mp3";
-    private String pathF = "file:src/main/resources/com/mproductions/views/sound/F.mp3";
+    private final String pathC = "file:src/main/resources/com/mproductions/views/sound/C.mp3";
+    private final String pathG = "file:src/main/resources/com/mproductions/views/sound/G.mp3";
+    private final String pathAm = "file:src/main/resources/com/mproductions/views/sound/Am.mp3";
+    private final String pathF = "file:src/main/resources/com/mproductions/views/sound/F.mp3";
 
     private void KeyframeStep(ActionEvent actionEvent, Timer tim) {
         tim.IterateCounter();
@@ -82,53 +90,29 @@ public class RythmLogic {
                 tim.Start();
             }
         });
-        btnC1.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(0).SetAudioPath(pathC);
+        btnStop.setOnMouseClicked((MouseEvent event) -> {
+            for (Timer tim : timers) {
+                if ((tim.timerfield.getText().isEmpty() || tim.GetAudioPath() == null || tim.GetAudioPath().isEmpty()))
+                    return;
+
+                tim.Stop();
+            }
         });
-        btnG1.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(0).SetAudioPath(pathG);
-        });
-        btnAm1.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(0).SetAudioPath(pathAm);
-        });
-        btnF1.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(0).SetAudioPath(pathF);
-        });
-        btnC2.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(1).SetAudioPath(pathC);
-        });
-        btnG2.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(1).SetAudioPath(pathG);
-        });
-        btnAm2.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(1).SetAudioPath(pathAm);
-        });
-        btnF2.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(1).SetAudioPath(pathF);
-        });
-        btnC3.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(2).SetAudioPath(pathC);
-        });
-        btnG3.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(2).SetAudioPath(pathG);
-        });
-        btnAm3.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(2).SetAudioPath(pathAm);
-        });
-        btnF3.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(2).SetAudioPath(pathF);
-        });
-        btnC4.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(3).SetAudioPath(pathC);
-        });
-        btnG4.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(3).SetAudioPath(pathG);
-        });
-        btnAm4.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(3).SetAudioPath(pathAm);
-        });
-        btnF4.setOnMouseClicked((MouseEvent event) -> {
-            timers.get(3).SetAudioPath(pathF);
-        });
+        btnC1.setOnMouseClicked((MouseEvent event) -> timers.get(FIRST_TIMER).SetAudioPath(pathC));
+        btnG1.setOnMouseClicked((MouseEvent event) -> timers.get(FIRST_TIMER).SetAudioPath(pathG));
+        btnAm1.setOnMouseClicked((MouseEvent event) -> timers.get(FIRST_TIMER).SetAudioPath(pathAm));
+        btnF1.setOnMouseClicked((MouseEvent event) -> timers.get(FIRST_TIMER).SetAudioPath(pathF));
+        btnC2.setOnMouseClicked((MouseEvent event) -> timers.get(SECOND_TIMER).SetAudioPath(pathC));
+        btnG2.setOnMouseClicked((MouseEvent event) -> timers.get(SECOND_TIMER).SetAudioPath(pathG));
+        btnAm2.setOnMouseClicked((MouseEvent event) -> timers.get(SECOND_TIMER).SetAudioPath(pathAm));
+        btnF2.setOnMouseClicked((MouseEvent event) -> timers.get(SECOND_TIMER).SetAudioPath(pathF));
+        btnC3.setOnMouseClicked((MouseEvent event) -> timers.get(THIRD_TIMER).SetAudioPath(pathC));
+        btnG3.setOnMouseClicked((MouseEvent event) -> timers.get(THIRD_TIMER).SetAudioPath(pathG));
+        btnAm3.setOnMouseClicked((MouseEvent event) -> timers.get(THIRD_TIMER).SetAudioPath(pathAm));
+        btnF3.setOnMouseClicked((MouseEvent event) -> timers.get(THIRD_TIMER).SetAudioPath(pathF));
+        btnC4.setOnMouseClicked((MouseEvent event) -> timers.get(FOURTH_TIMER).SetAudioPath(pathC));
+        btnG4.setOnMouseClicked((MouseEvent event) -> timers.get(FOURTH_TIMER).SetAudioPath(pathG));
+        btnAm4.setOnMouseClicked((MouseEvent event) -> timers.get(FOURTH_TIMER).SetAudioPath(pathAm));
+        btnF4.setOnMouseClicked((MouseEvent event) -> timers.get(FOURTH_TIMER).SetAudioPath(pathF));
     }
 }

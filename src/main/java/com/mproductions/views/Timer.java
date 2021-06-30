@@ -62,4 +62,9 @@ public class Timer {
         timeline.play();
     }
 
+    public void Stop()
+    {
+        timeline.stop();
+    }
+
 }

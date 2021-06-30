@@ -2,7 +2,6 @@ package com.mproductions.views;
 
 import com.github.psambit9791.jdsp.io.Wav;
 import com.github.psambit9791.jdsp.misc.Plotting;
-import com.github.psambit9791.jdsp.misc.UtilMethods;
 import com.github.psambit9791.jdsp.signal.peaks.FindPeak;
 import com.github.psambit9791.jdsp.signal.peaks.Peak;
 import com.github.psambit9791.wavfile.WavFileException;
@@ -10,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -23,8 +21,8 @@ public class AnalyzerLogic {
     @FXML
     private Button btnG;
 
-    private String pathC = "src/main/resources/com/mproductions/views/sound/C.wav";
-    private String pathG = "src/main/resources/com/mproductions/views/sound/G.wav";
+    private final String pathC = "src/main/resources/com/mproductions/views/sound/C.wav";
+    private final String pathG = "src/main/resources/com/mproductions/views/sound/G.wav";
 
     private double[] signal;
 
@@ -33,9 +31,7 @@ public class AnalyzerLogic {
         btnC.setOnMouseClicked((MouseEvent event) -> {
             try {
                 GetInput(pathC);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (WavFileException e) {
+            } catch (IOException | WavFileException e) {
                 e.printStackTrace();
             }
             DetectPeaks();
@@ -44,9 +40,7 @@ public class AnalyzerLogic {
         btnG.setOnMouseClicked((MouseEvent event) -> {
             try {
                 GetInput(pathG);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (WavFileException e) {
+            } catch (IOException | WavFileException e) {
                 e.printStackTrace();
             }
             DetectPeaks();

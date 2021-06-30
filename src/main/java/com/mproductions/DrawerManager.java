@@ -15,7 +15,6 @@ import javafx.scene.image.Image;
 import static com.mproductions.Main.PRIMARY_VIEW;
 import static com.mproductions.Main.FREESTYLE_VIEW;
 import static com.mproductions.Main.RYTHM_VIEW;
-import static com.mproductions.Main.MEMO_VIEW;
 import static com.mproductions.Main.ANALYZER_VIEW;
 
 
@@ -32,9 +31,8 @@ public class DrawerManager {
         final Item primaryItem = new ViewItem("Menu", MaterialDesignIcon.HOME.graphic(), PRIMARY_VIEW, ViewStackPolicy.SKIP);
         final Item secondaryItem = new ViewItem("FreeStyle", MaterialDesignIcon.GRAPHIC_EQ.graphic(), FREESTYLE_VIEW);
         final Item thirdItem = new ViewItem("Rythm", MaterialDesignIcon.GRAPHIC_EQ.graphic(), RYTHM_VIEW);
-        final Item fourthItem = new ViewItem("Memo", MaterialDesignIcon.GRAPHIC_EQ.graphic(), MEMO_VIEW);
-        final Item fifthItem = new ViewItem("Spectrum Analyzer", MaterialDesignIcon.GRAPHIC_EQ.graphic(), ANALYZER_VIEW);
-        drawer.getItems().addAll(primaryItem, secondaryItem, thirdItem, fourthItem, fifthItem);
+        final Item fourthItem = new ViewItem("Spectrum Analyzer", MaterialDesignIcon.GRAPHIC_EQ.graphic(), ANALYZER_VIEW);
+        drawer.getItems().addAll(primaryItem, secondaryItem, thirdItem, fourthItem);
         
         if (Platform.isDesktop()) {
             final Item quitItem = new Item("Quit", MaterialDesignIcon.EXIT_TO_APP.graphic());
