@@ -8,7 +8,7 @@ public class AnalyzerView {
 
     public View getView() {
         try {
-            View view = FXMLLoader.load(HomeView.class.getResource("fifth.fxml"));
+            View view = FXMLLoader.load(getClass().getResource("analyzer.fxml"));
             return view;
         } catch (IOException e) {
             System.out.println("IOException: " + e);

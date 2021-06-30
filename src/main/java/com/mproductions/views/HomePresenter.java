@@ -22,7 +22,7 @@ public class HomePresenter {
                 AppBar appBar = MobileApplication.getInstance().getAppBar();
                 appBar.setNavIcon(MaterialDesignIcon.MENU.button(e -> 
                         MobileApplication.getInstance().getDrawer().open()));
-                appBar.setTitleText("Menu");
+                appBar.setTitleText("Home");
             }
         });
     }

@@ -8,7 +8,7 @@ public class MemoView {
 
     public View getView() {
         try {
-            View view = FXMLLoader.load(FreestyleView.class.getResource("fourth.fxml"));
+            View view = FXMLLoader.load(getClass().getResource("memo.fxml"));
             return view;
         } catch (IOException e) {
             System.out.println("IOException: " + e);

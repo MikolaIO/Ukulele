@@ -6,11 +6,14 @@ import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 
 public class AnalyzerPresenter extends AnalyzerLogic {
 
     @FXML
     private View fifth;
+    @FXML
+    public Label label;
 
     public void initialize() {
         fifth.setShowTransitionFactory(BounceInRightTransition::new);

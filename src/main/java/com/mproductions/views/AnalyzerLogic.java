@@ -3,6 +3,8 @@ package com.mproductions.views;
 import com.github.psambit9791.jdsp.io.Wav;
 import com.github.psambit9791.jdsp.misc.Plotting;
 import com.github.psambit9791.jdsp.misc.UtilMethods;
+import com.github.psambit9791.jdsp.signal.peaks.FindPeak;
+import com.github.psambit9791.jdsp.signal.peaks.Peak;
 import com.github.psambit9791.wavfile.WavFileException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -36,6 +38,7 @@ public class AnalyzerLogic {
             } catch (WavFileException e) {
                 e.printStackTrace();
             }
+            DetectPeaks();
             CreatePlot();
         });
         btnG.setOnMouseClicked((MouseEvent event) -> {
@@ -46,6 +49,7 @@ public class AnalyzerLogic {
             } catch (WavFileException e) {
                 e.printStackTrace();
             }
+            DetectPeaks();
             CreatePlot();
         });
     }
@@ -54,7 +58,8 @@ public class AnalyzerLogic {
         Wav objRead1 = new Wav();
         objRead1.readWav(path);
         Hashtable<String, Long> propsOut = objRead1.getProperties();
-        double[][] signal2d = objRead1.getData("int");
+
+        double[][] signal2d = objRead1.getData("double");
         signal = new double[signal2d.length];
         for (int i = 0; i < signal2d.length; i++)
             signal[i]=signal2d[i][0];
@@ -62,22 +67,25 @@ public class AnalyzerLogic {
 
     private void CreatePlot()
     {
-        Plotting fig = new Plotting(600, 500, "Sample Figure", "Time", "Signal");
+        Plotting fig = new Plotting(1000, 700, "WAV Amplitude", "Time", "Signal");
         fig.initialisePlot();
-        fig.addSignal("One channel", signal, true);
+        fig.addSignal("First channel", signal, true);
         fig.plot();
     }
 
-    /*try (
+    private void DetectPeaks()
+    {
+        FindPeak fp = new FindPeak(signal);
+        Peak out = fp.detectPeaks();
+        int[] peaks = out.getPeaks();
+
+        try (
                 PrintStream output = new PrintStream("output.txt")) {
-            for (int i = 0; i < signal2d.length; i++) {
-                String s= "";
-                for (int j = 0; j < signal2d[i].length; j++) {
-                    s+=signal2d[i][j] + " ";
-                }
-                output.println(s);
-            }
+            for (int peak : peaks)
+                output.println(peak + "\n");
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }*/
+        }
+    }
 }

@@ -8,7 +8,7 @@ public class HomeView {
 
     public View getView() {
         try {
-            View view = FXMLLoader.load(HomeView.class.getResource("primary.fxml"));
+            View view = FXMLLoader.load(getClass().getResource("home.fxml"));
             return view;
         } catch (IOException e) {
             System.out.println("IOException: " + e);

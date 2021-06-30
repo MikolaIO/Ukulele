@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<View fx:id="secondary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="350.0" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: white;" stylesheets="@secondary.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mproductions.views.FreestylePresenter">
+<View fx:id="secondary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="350.0" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: white;" stylesheets="@freestyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mproductions.views.FreestylePresenter">
    <center>
       <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
          <columnConstraints>

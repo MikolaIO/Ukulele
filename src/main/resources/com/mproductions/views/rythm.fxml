@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 
-<View fx:id="third" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@third.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mproductions.views.RythmPresenter">
+<View fx:id="third" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@rythm.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mproductions.views.RythmPresenter">
    <center>
       <GridPane fx:id="gridpane" BorderPane.alignment="CENTER">
         <columnConstraints>
